@@ -14,16 +14,19 @@ def solution1(ltlst,rtlst):
 
 def solution2(ltlst,rtlst):
     solution2 = 0
-    for j in range(len(ltlst)):
-        count=0
-        for k in range(len(ltlst)):
-            if ltlst[j] == rtlst[k]:
-                count += 1
-        #print(j, "and", count)
-        solution2 += leftlst[j]*count 
+    frequency = {}
+
+    for element in rtlst:
+        if element in frequency:
+            frequency[element] += 1
+        else:
+            frequency[element] = 1
+
+    for element in ltlst:
+        if element in frequency:
+            solution2 += element * frequency[element]
     
     return solution2
-
 
 
 
