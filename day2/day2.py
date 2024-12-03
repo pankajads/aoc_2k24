@@ -20,7 +20,7 @@ def is_safe_with_removal(report):
 
     # Try removing each level and check if the report becomes safe
     for i in range(len(report)):
-        modified_report = report[:i] + report[i+1:]  # Remove the i-th element
+        modified_report = report[:i] + report[i+1:]  # Remove the ith element
         if is_safe(modified_report):
             return True
     
@@ -39,5 +39,5 @@ with open(filename) as filehandler:
             safe_reports_with_removal += 1
 
 
-print(f"Total Safe Reports: {safe_reports}")
-print(f"Total Safe Reports: {safe_reports_with_removal}")
+print(safe_reports)
+print(safe_reports_with_removal)
